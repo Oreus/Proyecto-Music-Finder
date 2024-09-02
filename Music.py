@@ -11,6 +11,29 @@ songs_db = [
     {"title": "Stay", "artist": "The Kid LAROI", "genre": "Pop", "length": 141, "release_year": 2021}
 ]
 
-song_count = 0
+def genre_search(genre_wanted):
+    song_list = []
+    for song in songs_db:
+        if(song["genre"] == genre_wanted):
+            song_list.append(song)
+    return song_list
 
-print("total song count:", song_count + len(songs_db))
+def readable_results(songs_found):
+    for song in songs_found:
+        print(song)
+    return
+
+genre_wanted = input('''Genre : 
+1. Rock
+2. Pop
+3. R&B
+4. K-Pop
+5. Hip-Hop
+6. Synthwave
+7. Synthpop
+8. Pop Rock
+Enter the genre wanted: ''')
+
+songs_found = genre_search(genre_wanted)
+
+print(readable_results(songs_found))
