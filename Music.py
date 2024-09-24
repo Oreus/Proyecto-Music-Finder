@@ -34,20 +34,26 @@ def readable_results(songs_found):
         print(f"{song['title']} by {song['artist']} ({song['release_year']}) - {song['length']} seconds")
     return
 
-genre_input = input("Enter genre (leave blank for any): ")
-year_input = input("Enter release year (leave blank for any): ")
-min_length_input = input("Enter minimum song length in seconds (leave blank for any): ")
-max_length_input = input("Enter maximum song length in seconds (leave blank for any): ")
+while True:
+    genre_input = input("Enter genre (leave blank for any): ")
+    year_input = input("Enter release year (leave blank for any): ")
+    min_length_input = input("Enter minimum song length in seconds (leave blank for any): ")
+    max_length_input = input("Enter maximum song length in seconds (leave blank for any): ")
 
-year_input = int(year_input) if year_input else None
-min_length_input = int(min_length_input) if min_length_input else None
-max_length_input = int(max_length_input) if max_length_input else None
+    year_input = int(year_input) if year_input else None
+    min_length_input = int(min_length_input) if min_length_input else None
+    max_length_input = int(max_length_input) if max_length_input else None
 
-recommended_songs = get_recommendations(
-    genre=genre_input,
-    year=year_input,
-    min_length=min_length_input,
-    max_length=max_length_input
+    recommended_songs = get_recommendations(
+        genre=genre_input,
+        year=year_input,
+        min_length=min_length_input,
+        max_length=max_length_input
 )
 
-readable_results(recommended_songs)
+    readable_results(recommended_songs)
+
+    repeat = input("Do you want to search again? (yes/no): ").strip().lower()
+    if repeat != 'yes':
+        print("Thank you for using the recommendation system!")
+        break
