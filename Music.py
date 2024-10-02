@@ -1,5 +1,4 @@
-songs_db = [
-    {"title": "Blinding Lights", "artist": "The Weeknd", "genre": "Synthwave", "length": 200, "release_year": 2019},
+songs_db = [    {"title": "Blinding Lights", "artist": "The Weeknd", "genre": "Synthwave", "length": 200, "release_year": 2019},
     {"title": "Levitating", "artist": "Dua Lipa", "genre": "Pop", "length": 203, "release_year": 2020},
     {"title": "Save Your Tears", "artist": "The Weeknd", "genre": "Synthpop", "length": 215, "release_year": 2020},
     {"title": "Don't Start Now", "artist": "Dua Lipa", "genre": "Pop", "length": 183, "release_year": 2019},
